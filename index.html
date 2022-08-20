@@ -7,8 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./index.css">
   <title>Frontend Mentor | Intro component with sign up form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <script src="./index.js" defer></script>
 </head>
 <body>
   <main>
@@ -24,11 +23,19 @@
         <span class="try-it-regular"> then $20/mo. thereafter</span> 
       </div>
       <div class="form-container">
-        <form action="./thankyou.html">
-          <input type="text" id="first-name" value="First Name">
-          <input type="text" id="last-name" value="Last Name">
-          <input type="email" id="email" value="Email Address">
-          <input type="password" id="password" value="Password">
+        <form action="./thankyou.html" novalidate onsubmit="return handleSubmit()">
+          <input type="text" class="input" id="first-name" placeholder="First Name" >
+          <img id="first-name-i" src="./images/icon-error.svg" alt="" width="20px">
+          <p id="first-name-p" class="hide">First Name cannot be empty</p>
+          <input type="text" class="input" id="last-name" placeholder="Last Name">
+          <img id="last-name-i" src="./images/icon-error.svg" alt="" width="20px">
+          <p id="last-name-p" class="hide">Last Name cannot be empty</p>
+          <input type="email"  class="input" id="email" placeholder="Email Address" >
+          <img id="email-i" src="./images/icon-error.svg" alt="" width="20px">
+          <p id="email-p" class="hide">looks like this is not an email</p>
+          <input type="password" class="input" id="password" placeholder="Password">
+          <img id="password-i" src="./images/icon-error.svg" alt="" width="20px">
+          <p id="password-p" class="hide">Password cannot be empty</p>
           <input type="submit" id="submit" value="Claim your free trial">
           <p class="disclaimer">By clicking the button, you are agreeing to our <span class="red-terms">Terms and Services</span> </p>
         </form> 
@@ -41,6 +48,6 @@
       Coded by <a href="https://www.twitter.com/abymani1">Abdul rehman</a>.
     </p>
   </footer>
-  <script src="./index.js"></script>
+  
 </body>
 </html>
